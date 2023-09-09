@@ -19,9 +19,9 @@ def creatUTC():
     utc_two_hours_forward = current_utc_time + time_window
     utc_two_hours_backward = current_utc_time - time_window
 
-    current_utc_formatted = current_utc_time.strftime('%Y-%m-%dT%H:%M:%SZ') 
-    utc_two_hours_forward_formatted = utc_two_hours_forward.strftime('2+: %Y-%m-%dT%H:%M:%SZ')
-    utc_two_hours_backward_formatted = utc_two_hours_backward.strftime('2-: %Y-%m-%dT%H:%M:%SZ')
+    current_utc_formatted = current_utc_time.strftime('utc: %Y-%m-%dT%H:%M:%SZ') 
+    utc_two_hours_forward_formatted = utc_two_hours_forward.strftime('val2+: %Y-%m-%dT%H:%M:%SZ')
+    utc_two_hours_backward_formatted = utc_two_hours_backward.strftime('val2-: %Y-%m-%dT%H:%M:%SZ')
 
     return current_utc_formatted, utc_two_hours_backward_formatted,utc_two_hours_forward_formatted
 
@@ -36,8 +36,8 @@ def loadAPIView(request, format=None):
         if slack_name and track:
             current_day = datetime.now()
             day = current_day.strftime('%A')
-            github_file_url =  "https://github.com/lady-thee/django-api-get/blob/main/api/views.py"
-            github_url = "https://github.com/lady-thee/django-api-get/tree/main"
+            github_file_url =  "https://github.com/lady-thee/django_api_get_endpoint/blob/main/api/views.py"
+            github_url = "https://github.com/lady-thee/django_api_get_endpoint.git"
             utc = creatUTC()
 
             data = {

@@ -8,6 +8,8 @@ django = "*"
 djangorestframework = "*"
 pydantic = "*"
 pydantic-settings = "*"
+gunicorn = "*"
+django-cors-headers = "*"
 
 [dev-packages]
 
