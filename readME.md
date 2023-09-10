@@ -33,7 +33,7 @@ The JSON Format should have the following:
 ## How it works
 
 It's pretty simple. using the link below, 
-[https://hng-s1-xdeg.onrender.com/api/?slack_name=theola_onuh&track=backend]
+[https://hng-s1-xdeg.onrender.com/api/?slack_name=Theola%20Onuh&track=backend]
 You can access the information in the GET endpoint request. 
 
 ## Hosting Platform:
