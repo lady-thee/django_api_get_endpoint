@@ -23,7 +23,7 @@ def creatUTC():
     utc_two_hours_forward_formatted = utc_two_hours_forward.strftime('val2+: %Y-%m-%dT%H:%M:%SZ')
     utc_two_hours_backward_formatted = utc_two_hours_backward.strftime('val2-: %Y-%m-%dT%H:%M:%SZ')
 
-    return current_utc_formatted, utc_two_hours_backward_formatted,utc_two_hours_forward_formatted
+    return current_utc_formatted
 
 
 @api_view(['GET'])
