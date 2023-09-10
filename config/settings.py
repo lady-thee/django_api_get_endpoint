@@ -35,7 +35,7 @@ SECRET_KEY = GENERAL_SETTINGS.SECRET_KEY
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = GENERAL_SETTINGS.DEBUG
 
-ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split(',')
+ALLOWED_HOSTS = GENERAL_SETTINGS.ALLOWED_HOSTS.split(',')
 
 
 # Application definition
