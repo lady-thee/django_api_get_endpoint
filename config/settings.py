@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 from typing import List
 from pathlib import Path
 from pydantic_settings import BaseSettings
+import os
 
 class GeneralSettings(BaseSettings):
     DEBUG: bool = False
@@ -34,7 +35,7 @@ SECRET_KEY = GENERAL_SETTINGS.SECRET_KEY
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = GENERAL_SETTINGS.DEBUG
 
-ALLOWED_HOSTS = GENERAL_SETTINGS.ALLOWED_HOSTS
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split(',')
 
 
 # Application definition
