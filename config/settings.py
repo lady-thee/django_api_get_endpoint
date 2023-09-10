@@ -18,7 +18,7 @@ import os
 class GeneralSettings(BaseSettings):
     DEBUG: bool = False
     SECRET_KEY: str
-    ALLOWED_HOSTS: List[str]
+    ALLOWED_HOSTS: str
    
 GENERAL_SETTINGS = GeneralSettings()
 
