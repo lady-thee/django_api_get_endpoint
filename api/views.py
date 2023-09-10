@@ -49,7 +49,7 @@ def loadAPIView(request, format=None):
                 'github_repo_url': github_url,
                 'status': status.HTTP_200_OK
             }
-            return Response(data)
+            return JsonResponse(data)
         else:
             safe = {
                 'status': status.HTTP_200_OK
