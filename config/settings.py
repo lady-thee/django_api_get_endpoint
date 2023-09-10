@@ -18,13 +18,12 @@ import os
 class GeneralSettings(BaseSettings):
     DEBUG: bool = False
     SECRET_KEY: str
-    ALLOWED_HOSTS: str
-   
+    
+
 GENERAL_SETTINGS = GeneralSettings()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
@@ -35,7 +34,18 @@ SECRET_KEY = GENERAL_SETTINGS.SECRET_KEY
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = GENERAL_SETTINGS.DEBUG
 
-ALLOWED_HOSTS = GENERAL_SETTINGS.ALLOWED_HOSTS.split(',')
+# Read ALLOWED_HOSTS from environment variable and split it into a list
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "").split(",")
+# print(ALLOWED_HOSTS)
+# Optionally, add a default value if ALLOWED_HOSTS is empty
+if not ALLOWED_HOSTS:
+    ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
+
+# Check for RENDER_EXTERNAL_HOSTNAME and add it to ALLOWED_HOSTS if available
+RENDER_EXTERNAL_HOSTNAME = os.environ.get("RENDER_EXTERNAL_HOSTNAME")
+if RENDER_EXTERNAL_HOSTNAME:
+    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
+
 
 
 # Application definition

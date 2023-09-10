@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: hng-s1
+    env: web
+    runtime: python
+    buildCommand: ""
+    startCommand: "gunicorn config.wsgi:application"
+    envVars:
+      - key: SECRET_KEY
+        generateValue: False
+      - key: WEB_CONCURRENCY
+        value: 4
